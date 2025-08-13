@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prison School - Mangas y OVA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: black; /* Fondo negro */
+      background-image: url('prison foto.jpg'); /* Cambia 'fondo.jpg' por el nombre de tu imagen */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white; /* Texto blanco */
+    }
+
+    /* Opcional: capa oscura sobre la imagen para que el texto resalte */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    nav {
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00ffff; /* Verde agua por defecto */
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* Colores alternados para los enlaces en la lista */
+    ol li:nth-child(3n+1) a {
+      color: blue;
+    }
+
+    ol li:nth-child(3n+2) a {
+      color: red;
+    }
+
+    ol li:nth-child(3n) a {
+      color: mediumaquamarine;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Bienvenido a los mangas Prison School del 11 al 28</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#Mangas">Mangas</a></li>
+      <li><a href="#info">OVA</a></li>
+    </ul>
+  </nav>
+
+  <section id="Mangas">
+    <h2>Mangas</h2>
+    <p>Esta es la sección de los mangas del volumen 11 al 28:</p>
+    <ol>
+      <li><a href="prison school volumen 11.pdf" target="_blank">Ver Manga 11</a></li>
+      <li><a href="prison school volumen 12.pdf" target="_blank">Ver Manga 12</a></li>
+      <li><a href="prison school volumen 13.pdf" target="_blank">Ver Manga 13</a></li>
+      <li><a href="prison school volumen 14.pdf" target="_blank">Ver Manga 14</a></li>
+      <li><a href="prison school volumen 15.pdf" target="_blank">Ver Manga 15</a></li>
+      <li><a href="prison school volumen 16.pdf" target="_blank">Ver Manga 16</a></li>
+      <li><a href="prison school volumen 17.pdf" target="_blank">Ver Manga 17</a></li>
+      <li><a href="prison school volumen 18.pdf" target="_blank">Ver Manga 18</a></li>
+      <li><a href="prison school volumen 19.pdf" target="_blank">Ver Manga 19</a></li>
+      <li><a href="prison school volumen 20.pdf" target="_blank">Ver Manga 20</a></li>
+      <li><a href="prison school volumen 21.pdf" target="_blank">Ver Manga 21</a></li>
+      <li><a href="prison school volumen 22.pdf" target="_blank">Ver Manga 22</a></li>
+      <li><a href="prison school volumen 23.pdf" target="_blank">Ver Manga 23</a></li>
+      <li><a href="prison school volumen 24.pdf" target="_blank">Ver Manga 24</a></li>
+      <li><a href="prison school volumen 25.pdf" target="_blank">Ver Manga 25</a></li>
+      <li><a href="prison school volumen 26.pdf" target="_blank">Ver Manga 26</a></li>
+      <li><a href="prison school volumen 27.pdf" target="_blank">Ver Manga 27</a></li>
+      <li><a href="prison school volumen 28.pdf" target="_blank">Ver Manga 28</a></li>
+    </ol>
+  </section>
+
+  <section id="info">
+    <h2>OVA</h2>
+    <p>Mira el OVA directamente aquí:</p>
+    <iframe width="560" height="315" 
+            src="https://www.youtube.com/embed/ezWs0tRaY74" 
+            title="OVA Video" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>
+  </section>
+
+</body>
+</html>
