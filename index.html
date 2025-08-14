@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prison School - Anime y Mangas</title>
+  <title>Prison School - Anime + Mangas</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,70 +15,77 @@
       background-attachment: fixed;
       color: white;
     }
-
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      inset: 0;
       background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
-
     nav {
       background-color: rgba(255, 255, 255, 0.1);
       padding: 10px;
       border-radius: 5px;
       margin-bottom: 20px;
     }
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { text-decoration: none; color: #00ffff; }
+    nav a:hover { text-decoration: underline; }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin-right: 20px;
-    }
-
-    a {
-      text-decoration: none;
-      color: #00ffff;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    iframe {
-      display: block;
-      margin: 20px auto;
-      border-radius: 10px;
-    }
-
-    .section {
+    .manga-section {
       background-color: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
       margin: 40px 0;
+    }
+
+    /* Animación pro */
+    .section {
       opacity: 0;
       transform: translateY(20px);
       visibility: hidden;
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s;
+      position: relative;
     }
-
     .section.active {
       opacity: 1;
       transform: translateY(0);
       visibility: visible;
     }
+
+    /* Player responsivo 16:9 */
+    .player-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 960px;
+      margin: 20px auto;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0,0,0,.5);
+    }
+    .player-wrap iframe {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    .episodios { max-width: 960px; margin: 0 auto; }
+    .episodios ol { columns: 2; gap: 16px; padding-left: 20px; }
+    @media (max-width: 640px) { .episodios ol { columns: 1; } }
+    .episodios a { color: #9ae6ff; }
+    .episodios a:hover { text-decoration: underline; }
+
+    /* Colores alternos a gusto */
+    .episodios li:nth-child(3n+1) a { color: #66aaff; }
+    .episodios li:nth-child(3n+2) a { color: #ff6b6b; }
+    .episodios li:nth-child(3n)   a { color: mediumaquamarine; }
   </style>
 </head>
 <body>
 
-  <h1>Prison School - Anime completo sin censura y con OVA</h1>
+  <h1>ANIME COMPLETO SIN CENSURA Y CON OVA</h1>
 
   <nav>
     <ul>
@@ -87,58 +94,42 @@
     </ul>
   </nav>
 
-  <!-- Sección Anime -->
+  <!-- Sección ANIME -->
   <section id="anime" class="section active">
-    <h2>Anime Completo Sin Censura y con OVA</h2>
-    <p>Disfruta todos los episodios uno por uno:</p>
-    
-    <ol>
-      <li>Episodio 1
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2001%20-%20The%20Peep%20Job.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 2
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2002%20-%20The%20Man%20Who%20Visited%20Too%20Much.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 3
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2003%20-%20Class%20President%20%E2%99%A5%20Vice-President.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 4
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2004%20-%20Take%20Me%20Out%20to%20the%20Sumo%20Ring.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 5
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2005%20-%20The%20School%27s%20Number%20One%20Bust.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 6
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2006%20-%20Viva%20Jail%20Break.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 7
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2007%20-%20Me%20and%20the%20Crotch%20Rope.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 8
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2008%20-%20The%20Diary%20of%20the%20Butler.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 9
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2009%20-%20Full%20of%20Bodily%20Fluids.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 10
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2010%20-%20It%27s%20a%20Bitch%20Garb.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 11
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2011%20-%20We%27re%20All%20F*cked.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>Episodio 12
-        <iframe src="https://archive.org/embed/Prison-School-/Episode%2012%20-%20Good%20Morning%20Prison.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-      <li>OVA
-        <iframe src="https://archive.org/embed/Prison-School-/Prison%20School%20OVA.mp4" width="640" height="360" allowfullscreen></iframe>
-      </li>
-    </ol>
+    <div class="player-wrap">
+      <!-- Episodio 1 por defecto (embed correcto con ?file= ) -->
+      <iframe id="player"
+        src="https://archive.org/embed/Prison-School-?file=Prison%20School%20%5BDubbed%5D%20%5BUncensored%5D%20%5B720p%5D/Episode%2001%20-%20The%20Peep%20Job.mp4&autoplay=1"
+        allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </div>
+
+    <div class="episodios">
+      <h2>Episodios (clic para reproducir dentro)</h2>
+      <ol>
+        <li><a href="#" onclick="playSeries('Episode 01 - The Peep Job.mp4')">Episodio 01 — The Peep Job</a></li>
+        <li><a href="#" onclick="playSeries('Episode 02 - The Man Who Viewed Too Much.mp4')">Episodio 02 — The Man Who Viewed Too Much</a></li>
+        <li><a href="#" onclick="playSeries('Episode 03 - A Mighty Spurt.mp4')">Episodio 03 — A Mighty Spurt</a></li>
+        <li><a href="#" onclick="playSeries('Episode 04 - Take Me Out to the Sumoland.mp4')">Episodio 04 — Take Me Out to the Sumoland</a></li>
+        <li><a href="#" onclick="playSeries('Episode 05 - The School\\'s Number One Most Treacherous Man.mp4')">Episodio 05 — The School's Number One Most Treacherous Man</a></li>
+        <li><a href="#" onclick="playSeries('Episode 06 - Vengeance is Hana\\'s.mp4')">Episodio 06 — Vengeance is Hana's</a></li>
+        <li><a href="#" onclick="playSeries('Episode 07 Meiko\\'s Delicious Restaurant.mp4')">Episodio 07 — Meiko's Delicious Restaurant</a></li>
+        <li><a href="#" onclick="playSeries('Episode 08 - The Diary of Andre.mp4')">Episodio 08 — The Diary of Andre</a></li>
+        <li><a href="#" onclick="playSeries('Episode 09 - Full of Bodily Fluids.mp4')">Episodio 09 — Full of Bodily Fluids</a></li>
+        <li><a href="#" onclick="playSeries('Episode 10 - It\\'s a Bum-derful Life.mp4')">Episodio 10 — It's a Bum-derful Life</a></li>
+        <li><a href="#" onclick="playSeries('Episode 11 - Eryngii Brockovich.mp4')">Episodio 11 — Eryngii Brockovich</a></li>
+        <li><a href="#" onclick="playSeries('Episode 12 - Good Morning, Prison.mp4')">Episodio 12 — Good Morning, Prison</a></li>
+        <li><a href="#" onclick="playOVA()">OVA — Mad Wax</a></li>
+      </ol>
+    </div>
   </section>
 
-  <!-- Sección Mangas -->
-  <section id="mangas" class="section">
-    <h2>Mangas</h2>
-    <p>Esta es la sección de los mangas del volumen 11 al 28:</p>
+  <!-- Sección MANGAS (al final de la página) -->
+  <section id="mangas" class="section manga-section">
+    <h2>Mangas (Volúmenes 11–28)</h2>
+    <p>Links de Google Drive (se abren en pestaña nueva):</p>
     <ol>
       <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view" target="_blank">Ver Manga 11</a></li>
       <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view" target="_blank">Ver Manga 12</a></li>
@@ -162,19 +153,37 @@
   </section>
 
   <script>
+    // Cambia de sección (con animación)
     function mostrarSeccion(id) {
-      document.querySelectorAll('.section').forEach(seccion => {
-        seccion.classList.remove('active');
-      });
-      setTimeout(() => {
-        document.getElementById(id).classList.add('active');
-      }, 50);
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      setTimeout(() => document.getElementById(id).classList.add('active'), 50);
+      if (id === 'anime') window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (id === 'mangas') document.getElementById('mangas').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Utilidad para fijar el player a un archivo de IA
+    function setPlayer(itemId, filePath) {
+      const url = `https://archive.org/embed/${itemId}?file=${encodeURIComponent(filePath)}&autoplay=1`;
+      document.getElementById('player').src = url;
+    }
+
+    // Episodios de la temporada (misma carpeta dentro del item)
+    const SERIES_ITEM = 'Prison-School-';
+    const SERIES_DIR  = 'Prison School [Dubbed] [Uncensored] [720p]/';
+
+    function playSeries(fileName) {
+      setPlayer(SERIES_ITEM, SERIES_DIR + fileName);
+    }
+
+    // OVA (otro item distinto en IA)
+    function playOVA() {
+      const OVA_ITEM = 'reaktor-prison-school-ova-uncensored-v2-1080pbdx26510-bitdual-audio_202302';
+      const OVA_FILE = '[Reaktor] Prison School - OVA Uncensored v2 [480p][x265][10-bit].mp4';
+      setPlayer(OVA_ITEM, OVA_FILE);
     }
   </script>
-
 </body>
 </html>
-
 
 
 
