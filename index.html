@@ -95,7 +95,7 @@
       <a onclick="mostrarEpisodio('ova')" id="link-ova">OVA</a>
     </nav>
 
-    <section id="ep1" class="activo">
+    <section id="ep1" class="active">
       <iframe class="player" src="https://drive.google.com/file/d/1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9/preview" allowfullscreen></iframe>
     </section>
     <section id="ep2" style="display:none;">
@@ -108,16 +108,16 @@
       <iframe class="player" src="https://drive.google.com/file/d/1UOLFxKclBMrreP3or2gcbpiO2CnjB3JQ/preview" allowfullscreen></iframe>
     </section>
     <section id="ep5" style="display:none;">
-      <iframe class="player" src="https://drive.google.com/file/d/1UsWBF4aYvKS9fYOLSQXJPVpgbVBgRTWU/preview" allowfullscreen></iframe>
+      <iframe class="player" src="https://drive.google.com/file/d/1ULf_vkCsRLYeY4c8ny5YColnq15zlVuO/preview" allowfullscreen></iframe>
     </section>
     <section id="ep6" style="display:none;">
-      <iframe class="player" src="https://drive.google.com/file/d/1UidwtIscnYiHuiBrlTF6HX5PGoLuO4bO/preview" allowfullscreen></iframe>
+      <iframe class="player" src="https://drive.google.com/file/d/1UsWBF4aYvKS9fYOLSQXJPVpgbVBgRTWU/preview" allowfullscreen></iframe>
     </section>
     <section id="ep7" style="display:none;">
-      <iframe class="player" src="https://drive.google.com/file/d/1Uznw8dMN-kppzvWZBDeQRESwU6b8JjD5/preview" allowfullscreen></iframe>
+      <iframe class="player" src="https://drive.google.com/file/d/1UidwtIscnYiHuiBrlTF6HX5PGoLuO4bO/preview" allowfullscreen></iframe>
     </section>
     <section id="ep8" style="display:none;">
-      <iframe class="player" src="https://drive.google.com/file/d/1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9/preview" allowfullscreen></iframe>
+      <iframe class="player" src="https://drive.google.com/file/d/1Uznw8dMN-kppzvWZBDeQRESwU6b8JjD5/preview" allowfullscreen></iframe>
     </section>
     <section id="ep9" style="display:none;">
       <iframe class="player" src="https://drive.google.com/file/d/1Uw_5LQIAaXHMjrxbNhkZP2yYBw65jdS-/preview" allowfullscreen></iframe>
@@ -132,7 +132,7 @@
       <iframe class="player" src="https://drive.google.com/file/d/1UvXH75NwnapaDhy5q-uUbSxfRGSdTy6e/preview" allowfullscreen></iframe>
     </section>
     <section id="ova" style="display:none;">
-      <iframe class="player" src="https://drive.google.com/file/d/1ULf_vkCsRLYeY4c8ny5YColnq15zlVuO/preview" allowfullscreen></iframe>
+      <iframe class="player" src="https://drive.google.com/file/d/1Utx9tQXTUZB5H_hgPA8k21LwhltiKEhZ/preview" allowfullscreen></iframe>
     </section>
   </section>
 
@@ -181,32 +181,17 @@
       secciones.forEach(sec => {
         if (sec.id === id) {
           sec.style.display = 'block';
+          // Actualizar enlace activo
+          document.getElementById('link-' + id).classList.add('active');
         } else {
           sec.style.display = 'none';
+          const linkId = 'link-' + sec.id;
+          if(document.getElementById(linkId)) {
+            document.getElementById(linkId).classList.remove('active');
+          }
         }
       });
-
-      // Actualizar estilos de links de episodios
-      for (let i = 1; i <= 12; i++) {
-        const link = document.getElementById('link-ep' + i);
-        if (link) link.classList.remove('active');
-      }
-      const linkOVA = document.getElementById('link-ova');
-      if (linkOVA) linkOVA.classList.remove('active');
-
-      const linkActivo = document.getElementById('link-' + id);
-      if (linkActivo) linkActivo.classList.add('active');
     }
-
-    // Inicializar mostrando Anime y Episodio 1
-    mostrarSeccion('anime');
-    mostrarEpisodio('ep1');
   </script>
-
 </body>
 </html>
-
-
-
-
-
