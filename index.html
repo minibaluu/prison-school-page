@@ -2,132 +2,142 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prison School - Anime + Mangas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prison School – Episodios y Mangas</title>
   <style>
     body {
+      background: #000;
+      color: #fff;
       font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: black;
-      background-image: url('prison foto.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: white;
-    }
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: -1;
+      padding: 20px;
+      text-align: center;
+      margin: 0;
     }
     nav {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 10px;
-      border-radius: 5px;
       margin-bottom: 20px;
     }
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 16px; flex-wrap: wrap; }
-    nav a { text-decoration: none; color: #00ffff; }
-    nav a:hover { text-decoration: underline; }
-
-    .manga-section {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      margin: 40px 0;
+    nav a {
+      margin: 0 10px;
+      color: #0ff;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
     }
-
-    /* Animación pro */
-    .section {
-      opacity: 0;
-      transform: translateY(20px);
-      visibility: hidden;
-      transition: opacity 0.45s ease, transform 0.45s ease, visibility 0.45s;
-      position: relative;
+    nav a.active {
+      text-decoration: underline;
     }
-    .section.active {
-      opacity: 1;
-      transform: translateY(0);
-      visibility: visible;
+    section {
+      display: none;
+      margin-top: 20px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
     }
-
-    /* Player responsivo 16:9 */
-    .player-wrap {
-      position: relative;
+    section.active {
+      display: block;
+    }
+    .player {
       width: 100%;
       max-width: 960px;
-      margin: 20px auto;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 20px rgba(0,0,0,.5);
+      height: 540px;
+      border: none;
+      display: block;
+      margin: 0 auto 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
     }
-    .player-wrap iframe {
-      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+    ol {
+      columns: 2;
+      padding-left: 20px;
     }
-
-    .episodios { max-width: 960px; margin: 0 auto; }
-    .episodios ol { columns: 2; gap: 16px; padding-left: 20px; }
-    @media (max-width: 640px) { .episodios ol { columns: 1; } }
-    .episodios a { color: #9ae6ff; }
-    .episodios a:hover { text-decoration: underline; }
-
-    /* Colores alternos a gusto */
-    .episodios li:nth-child(3n+1) a { color: #66aaff; }
-    .episodios li:nth-child(3n+2) a { color: #ff6b6b; }
-    .episodios li:nth-child(3n)   a { color: mediumaquamarine; }
+    ol li {
+      margin-bottom: 10px;
+    }
+    ol li a {
+      color: #0ff;
+      text-decoration: none;
+    }
+    ol li a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      ol {
+        columns: 1;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>ANIME COMPLETO SIN CENSURA Y CON OVA</h1>
+  <h1>Prison School – Episodios y Mangas</h1>
 
   <nav>
-    <ul>
-      <li><a href="#" onclick="mostrarSeccion('anime')">Anime</a></li>
-      <li><a href="#" onclick="mostrarSeccion('mangas')">Mangas</a></li>
-    </ul>
+    <a id="nav-anime" class="active" onclick="mostrarSeccion('anime')">Anime</a>
+    <a id="nav-mangas" onclick="mostrarSeccion('mangas')">Mangas</a>
   </nav>
 
-  <!-- Sección ANIME -->
-  <section id="anime" class="section active">
-    <div class="player-wrap">
-      <!-- Episodio 1 por defecto (embed correcto con ?file= ) -->
-      <iframe id="player"
-        src="https://archive.org/embed/Prison-School-?file=Prison%20School%20%5BDubbed%5D%20%5BUncensored%5D%20%5B720p%5D/Episode%2001%20-%20The%20Peep%20Job.mp4&autoplay=1"
-        allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen"
-        allowfullscreen
-        referrerpolicy="strict-origin-when-cross-origin">
-      </iframe>
-    </div>
+  <!-- Sección Anime -->
+  <section id="anime" class="active">
+    <nav>
+      <a onclick="mostrarEpisodio('ep1')" id="link-ep1" class="active">Episodio 1</a>
+      <a onclick="mostrarEpisodio('ep2')" id="link-ep2">Episodio 2</a>
+      <a onclick="mostrarEpisodio('ep3')" id="link-ep3">Episodio 3</a>
+      <a onclick="mostrarEpisodio('ep4')" id="link-ep4">Episodio 4</a>
+      <a onclick="mostrarEpisodio('ep5')" id="link-ep5">Episodio 5</a>
+      <a onclick="mostrarEpisodio('ep6')" id="link-ep6">Episodio 6</a>
+      <a onclick="mostrarEpisodio('ep7')" id="link-ep7">Episodio 7</a>
+      <a onclick="mostrarEpisodio('ep8')" id="link-ep8">Episodio 8</a>
+      <a onclick="mostrarEpisodio('ep9')" id="link-ep9">Episodio 9</a>
+      <a onclick="mostrarEpisodio('ep10')" id="link-ep10">Episodio 10</a>
+      <a onclick="mostrarEpisodio('ep11')" id="link-ep11">Episodio 11</a>
+      <a onclick="mostrarEpisodio('ep12')" id="link-ep12">Episodio 12</a>
+      <a onclick="mostrarEpisodio('ova')" id="link-ova">OVA</a>
+    </nav>
 
-    <div class="episodios">
-      <h2>Episodios (clic para reproducir dentro)</h2>
-      <ol>
-        <li><a href="#" onclick="playSeries('Episode 01 - The Peep Job.mp4')">Episodio 01 — The Peep Job</a></li>
-        <li><a href="#" onclick="playSeries('Episode 02 - The Man Who Viewed Too Much.mp4')">Episodio 02 — The Man Who Viewed Too Much</a></li>
-        <li><a href="#" onclick="playSeries('Episode 03 - A Mighty Spurt.mp4')">Episodio 03 — A Mighty Spurt</a></li>
-        <li><a href="#" onclick="playSeries('Episode 04 - Take Me Out to the Sumoland.mp4')">Episodio 04 — Take Me Out to the Sumoland</a></li>
-        <li><a href="#" onclick="playSeries('Episode 05 - The School\\'s Number One Most Treacherous Man.mp4')">Episodio 05 — The School's Number One Most Treacherous Man</a></li>
-        <li><a href="#" onclick="playSeries('Episode 06 - Vengeance is Hana\\'s.mp4')">Episodio 06 — Vengeance is Hana's</a></li>
-        <li><a href="#" onclick="playSeries('Episode 07 Meiko\\'s Delicious Restaurant.mp4')">Episodio 07 — Meiko's Delicious Restaurant</a></li>
-        <li><a href="#" onclick="playSeries('Episode 08 - The Diary of Andre.mp4')">Episodio 08 — The Diary of Andre</a></li>
-        <li><a href="#" onclick="playSeries('Episode 09 - Full of Bodily Fluids.mp4')">Episodio 09 — Full of Bodily Fluids</a></li>
-        <li><a href="#" onclick="playSeries('Episode 10 - It\\'s a Bum-derful Life.mp4')">Episodio 10 — It's a Bum-derful Life</a></li>
-        <li><a href="#" onclick="playSeries('Episode 11 - Eryngii Brockovich.mp4')">Episodio 11 — Eryngii Brockovich</a></li>
-        <li><a href="#" onclick="playSeries('Episode 12 - Good Morning, Prison.mp4')">Episodio 12 — Good Morning, Prison</a></li>
-        <li><a href="#" onclick="playOVA()">OVA — Mad Wax</a></li>
-      </ol>
-    </div>
+    <section id="ep1" class="activo">
+      <iframe class="player" src="https://drive.google.com/file/d/1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep2" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UFFbVYBlfQy-kHKhSY-qITOOiKgSh4SA/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep3" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UAU6DZYXM5tEJq8dkxW4IsxWXBe1a6DJ/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep4" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UOLFxKclBMrreP3or2gcbpiO2CnjB3JQ/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep5" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UsWBF4aYvKS9fYOLSQXJPVpgbVBgRTWU/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep6" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UidwtIscnYiHuiBrlTF6HX5PGoLuO4bO/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep7" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1Uznw8dMN-kppzvWZBDeQRESwU6b8JjD5/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep8" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep9" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1Uw_5LQIAaXHMjrxbNhkZP2yYBw65jdS-/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep10" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1Uc27oGEKvP0Grvnc0KIvB8RNlexJZuIC/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep11" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1U_ysYEzi62K__30goLtPc2j-4CUDnq8x/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ep12" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1UvXH75NwnapaDhy5q-uUbSxfRGSdTy6e/preview" allowfullscreen></iframe>
+    </section>
+    <section id="ova" style="display:none;">
+      <iframe class="player" src="https://drive.google.com/file/d/1ULf_vkCsRLYeY4c8ny5YColnq15zlVuO/preview" allowfullscreen></iframe>
+    </section>
   </section>
 
-  <!-- Sección MANGAS (al final de la página) -->
-  <section id="mangas" class="section manga-section">
+  <!-- Sección Mangas -->
+  <section id="mangas">
     <h2>Mangas (Volúmenes 11–28)</h2>
     <p>Links de Google Drive (se abren en pestaña nueva):</p>
     <ol>
@@ -135,55 +145,67 @@
       <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view" target="_blank">Ver Manga 12</a></li>
       <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view" target="_blank">Ver Manga 13</a></li>
       <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view" target="_blank">Ver Manga 14</a></li>
-      <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view" target="_blank">Ver Manga 15</a></li>
-      <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view" target="_blank">Ver Manga 16</a></li>
-      <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view" target="_blank">Ver Manga 17</a></li>
-      <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view" target="_blank">Ver Manga 18</a></li>
-      <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view" target="_blank">Ver Manga 19</a></li>
-      <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view" target="_blank">Ver Manga 20</a></li>
-      <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view" target="_blank">Ver Manga 21</a></li>
-      <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view" target="_blank">Ver Manga 22</a></li>
-      <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view" target="_blank">Ver Manga 23</a></li>
-      <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view" target="_blank">Ver Manga 24</a></li>
-      <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view" target="_blank">Ver Manga 25</a></li>
-      <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view" target="_blank">Ver Manga 26</a></li>
-      <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view" target="_blank">Ver Manga 27</a></li>
-      <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view" target="_blank">Ver Manga 28</a></li>
+      <li><a href="https://drive.google.com/file/d/1TQ4dPfPb09P9CQE0qP1VKl-Q3k08y3FK/view" target="_blank">Ver Manga 15</a></li>
+      <li><a href="https://drive.google.com/file/d/1vmGEpm6xBTRi7SHpIjnt96y7HcaF3TBr/view" target="_blank">Ver Manga 16</a></li>
+      <li><a href="https://drive.google.com/file/d/1nScNHGP-hpE5NsjfDC1W_eHTS8pWHTfG/view" target="_blank">Ver Manga 17</a></li>
+      <li><a href="https://drive.google.com/file/d/1Ar3TbOin4FwwMJuib9FjiBxvFZ9a0dY9/view" target="_blank">Ver Manga 18</a></li>
+      <li><a href="https://drive.google.com/file/d/1paSi1AzZfZ5rTfrXBJRqPiCbRzMzYZEd/view" target="_blank">Ver Manga 19</a></li>
+      <li><a href="https://drive.google.com/file/d/1PPb7fkE9fqVT5n4l07wiv5clKvkTq8lQ/view" target="_blank">Ver Manga 20</a></li>
+      <li><a href="https://drive.google.com/file/d/1DErLeXtjOjjwXcMpc3EohM1rz6FazpxO/view" target="_blank">Ver Manga 21</a></li>
+      <li><a href="https://drive.google.com/file/d/1OSKWZzSWrcbGoz25TiNnvJL0XH0iX6fh/view" target="_blank">Ver Manga 22</a></li>
+      <li><a href="https://drive.google.com/file/d/1Cx-0hHw27psSYYK3tX0iG3X_kqMBJluH/view" target="_blank">Ver Manga 23</a></li>
+      <li><a href="https://drive.google.com/file/d/1vUlP2rO-PMRHq_5_4DlO5qQoN9GAdpA4/view" target="_blank">Ver Manga 24</a></li>
+      <li><a href="https://drive.google.com/file/d/1oHohvGzHrksGHXlT-V-tVQfGUdwKUQ6W/view" target="_blank">Ver Manga 25</a></li>
+      <li><a href="https://drive.google.com/file/d/10kRJvCduClAwLEuLB-wOaZlt3yM3uC9/view" target="_blank">Ver Manga 26</a></li>
+      <li><a href="https://drive.google.com/file/d/1epCCbcxPcu-WPEh6Rc5bP4nY8P89uRDX/view" target="_blank">Ver Manga 27</a></li>
+      <li><a href="https://drive.google.com/file/d/1pf6EBNKKw_rW_kZB95mGtv1VwrBivDfS/view" target="_blank">Ver Manga 28</a></li>
     </ol>
   </section>
 
   <script>
-    // Cambia de sección (con animación)
-    function mostrarSeccion(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      setTimeout(() => document.getElementById(id).classList.add('active'), 50);
-      if (id === 'anime') window.scrollTo({ top: 0, behavior: 'smooth' });
-      if (id === 'mangas') document.getElementById('mangas').scrollIntoView({ behavior: 'smooth' });
+    // Mostrar la sección seleccionada (anime o mangas)
+    function mostrarSeccion(seccion) {
+      document.getElementById('anime').style.display = 'none';
+      document.getElementById('mangas').style.display = 'none';
+      document.getElementById(seccion).style.display = 'block';
+
+      // Actualizar estilos de nav principal
+      document.getElementById('nav-anime').classList.remove('active');
+      document.getElementById('nav-mangas').classList.remove('active');
+      document.getElementById('nav-' + seccion).classList.add('active');
     }
 
-    // Utilidad para fijar el player a un archivo de IA
-    function setPlayer(itemId, filePath) {
-      const url = `https://archive.org/embed/${itemId}?file=${encodeURIComponent(filePath)}&autoplay=1`;
-      document.getElementById('player').src = url;
+    // Mostrar episodio seleccionado y ocultar los demás
+    function mostrarEpisodio(id) {
+      const secciones = document.querySelectorAll('#anime > section');
+      secciones.forEach(sec => {
+        if (sec.id === id) {
+          sec.style.display = 'block';
+        } else {
+          sec.style.display = 'none';
+        }
+      });
+
+      // Actualizar estilos de links de episodios
+      for (let i = 1; i <= 12; i++) {
+        const link = document.getElementById('link-ep' + i);
+        if (link) link.classList.remove('active');
+      }
+      const linkOVA = document.getElementById('link-ova');
+      if (linkOVA) linkOVA.classList.remove('active');
+
+      const linkActivo = document.getElementById('link-' + id);
+      if (linkActivo) linkActivo.classList.add('active');
     }
 
-    // Episodios de la temporada (misma carpeta dentro del item)
-    const SERIES_ITEM = 'Prison-School-';
-    const SERIES_DIR  = 'Prison School [Dubbed] [Uncensored] [720p]/';
-
-    function playSeries(fileName) {
-      setPlayer(SERIES_ITEM, SERIES_DIR + fileName);
-    }
-
-    // OVA (otro item distinto en IA)
-    function playOVA() {
-      const OVA_ITEM = 'reaktor-prison-school-ova-uncensored-v2-1080pbdx26510-bitdual-audio_202302';
-      const OVA_FILE = '[Reaktor] Prison School - OVA Uncensored v2 [480p][x265][10-bit].mp4';
-      setPlayer(OVA_ITEM, OVA_FILE);
-    }
+    // Inicializar mostrando Anime y Episodio 1
+    mostrarSeccion('anime');
+    mostrarEpisodio('ep1');
   </script>
+
 </body>
 </html>
+
 
 
 
