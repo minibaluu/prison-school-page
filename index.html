@@ -3,277 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anime y Manga Collection</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<title>Prison School – Episodios y Mangas</title>
 <style>
-body {
-  margin: 0;
-  font-family: 'Press Start 2P', cursive;
-  background: url('https://raw.githubusercontent.com/minibaluu/prison-school-page/main/prison%20foto%202.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-}
-
-h1 {
-  text-align:center;
-  text-shadow: 0 0 10px #0ff;
-  margin-top: 20px;
-}
-
-nav {
-  text-align: center;
-  margin: 20px 0;
-}
-
-nav a {
-  display: inline-block;
-  margin: 0 10px;
-  padding: 10px 15px;
-  color: #0ff;
-  text-decoration: none;
-  font-weight: bold;
-  border: 2px solid #0ff;
-  border-radius: 8px;
-  transition: all 0.3s;
-  animation: neonBlink 1.5s infinite alternate;
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
-}
-
-@keyframes neonBlink {
-  0% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
-  50% { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff; }
-  100% { text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
-}
-
-nav a.active {
-  background: rgba(0,255,255,0.2);
-  box-shadow: 0 0 20px #0ff;
-}
-
-section {
-  display: none;
-  max-width: 960px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 20px rgba(0,255,255,0.5);
-}
-
-section.active {
-  display: block;
-}
-
-.player {
-  width: 100%;
-  height: 540px;
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,255,255,0.5);
-  margin-bottom: 20px;
-  transition: all 0.3s;
-}
-
-.player:hover {
-  box-shadow: 0 0 30px #0ff, 0 0 50px #0ff, 0 0 70px #0ff;
-  transform: scale(1.02);
-}
-
-ol {
-  columns: 2;
-  padding-left: 20px;
-  margin: 0;
-}
-
-ol li {
-  margin-bottom: 12px;
-}
-
-ol li a {
-  color: #0ff;
-  text-decoration: none;
-  padding: 5px 10px;
-  border: 1px solid #0ff;
-  border-radius: 6px;
-  display: inline-block;
-  transition: 0.3s;
-  text-shadow: 0 0 3px #0ff;
-}
-
-ol li a:hover {
-  background: rgba(0,255,255,0.2);
-  box-shadow: 0 0 15px #0ff;
-}
-
-@media (max-width: 600px) {
-  ol {
-    columns: 1;
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+    background: #000;
   }
-}
-
-/* Fondos personalizados */
-#wonderland-anime, #wonderland-manga {
-  background: url('https://github.com/minibaluu/prison-school-page/blob/main/deadman%20anime.jpg?raw=true') no-repeat center center;
-  background-size: cover;
-}
-#dbs-manga {
-  background: url('https://github.com/minibaluu/prison-school-page/blob/main/dbs%20manga.jpg?raw=true') no-repeat center center;
-  background-size: cover;
-}
+  nav {
+    margin: 10px 0;
+  }
+  nav a {
+    margin: 0 8px;
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  nav a.active {
+    text-decoration: underline;
+  }
+  section {
+    display: none;
+    padding: 20px;
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+  }
+  section.active {
+    display: block;
+  }
+  .player {
+    width: 100%;
+    max-width: 960px;
+    height: 540px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  ol {
+    columns: 2;
+    padding-left: 20px;
+  }
+  ol li {
+    margin-bottom: 10px;
+  }
+  ol li a {
+    color: #0ff;
+    text-decoration: none;
+  }
+  ol li a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width:600px) {
+    ol { columns:1; }
+  }
 </style>
 </head>
 <body>
 
-<h1>Anime y Manga Collection</h1>
+<h1>Prison School – Episodios y Mangas</h1>
 
 <nav>
-  <a id="nav-anime" class="active" onclick="mostrarSeccion('anime')">Prison School Anime</a>
-  <a id="nav-prison-manga" onclick="mostrarSeccion('prison-manga')">Prison School Manga</a>
-  <a id="nav-wonderland-anime" onclick="mostrarSeccion('wonderland-anime')">Deadman Wonderland Anime</a>
-  <a id="nav-wonderland-manga" onclick="mostrarSeccion('wonderland-manga')">Deadman Wonderland Manga</a>
-  <a id="nav-dbs-manga" onclick="mostrarSeccion('dbs-manga')">DBS Manga</a>
+  <a class="active" onclick="showSection('anime')">Anime</a>
+  <a onclick="showSection('mangas')">Prison School Manga</a>
+  <a onclick="showSection('wonderlans')">Wonderlans Anime</a>
+  <a onclick="showSection('wonderlans-manga')">Wonderlans Manga</a>
+  <a onclick="showSection('dbs-manga')">DBS Manga</a>
 </nav>
 
-<!-- Prison School Anime -->
-<section id="anime" class="active">
-  <nav>
-    <a onclick="mostrarEpisodio('ep1')" id="link-ep1" class="active">Episodio 1</a>
-    <a onclick="mostrarEpisodio('ep2')" id="link-ep2">Episodio 2</a>
-    <a onclick="mostrarEpisodio('ep3')" id="link-ep3">Episodio 3</a>
-    <a onclick="mostrarEpisodio('ep4')" id="link-ep4">Episodio 4</a>
-    <a onclick="mostrarEpisodio('ep5')" id="link-ep5">Episodio 5</a>
-    <a onclick="mostrarEpisodio('ep6')" id="link-ep6">Episodio 6</a>
-    <a onclick="mostrarEpisodio('ep7')" id="link-ep7">Episodio 7</a>
-    <a onclick="mostrarEpisodio('ep8')" id="link-ep8">Episodio 8</a>
-    <a onclick="mostrarEpisodio('ep9')" id="link-ep9">Episodio 9</a>
-    <a onclick="mostrarEpisodio('ep10')" id="link-ep10">Episodio 10</a>
-    <a onclick="mostrarEpisodio('ep11')" id="link-ep11">Episodio 11</a>
-    <a onclick="mostrarEpisodio('ep12')" id="link-ep12">Episodio 12</a>
-    <a onclick="mostrarEpisodio('ova')" id="link-ova">OVA</a>
-  </nav>
-  <section id="ep1"><iframe class="player" src="https://drive.google.com/file/d/1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9/preview" allowfullscreen></iframe></section>
-  <section id="ep2"><iframe class="player" src="https://drive.google.com/file/d/1UFFbVYBlfQy-kHKhSY-qITOOiKgSh4SA/preview" allowfullscreen></iframe></section>
-  <section id="ep3"><iframe class="player" src="https://drive.google.com/file/d/1UAU6DZYXM5tEJq8dkxW4IsxWXBe1a6DJ/preview" allowfullscreen></iframe></section>
-  <section id="ep4"><iframe class="player" src="https://drive.google.com/file/d/1UOLFxKclBMrreP3or2gcbpiO2CnjB3JQ/preview" allowfullscreen></iframe></section>
-  <section id="ep5"><iframe class="player" src="https://drive.google.com/file/d/1ULf_vkCsRLYeY4c8ny5YColnq15zlVuO/preview" allowfullscreen></iframe></section>
-  <section id="ep6"><iframe class="player" src="https://drive.google.com/file/d/1UsWBF4aYvKS9fYOLSQXJPVpgbVBgRTWU/preview" allowfullscreen></iframe></section>
-  <section id="ep7"><iframe class="player" src="https://drive.google.com/file/d/1UidwtIscnYiHuiBrlTF6HX5PGoLuO4bO/preview" allowfullscreen></iframe></section>
-  <section id="ep8"><iframe class="player" src="https://drive.google.com/file/d/1Uznw8dMN-kppzvWZBDeQRESwU6b8JjD5/preview" allowfullscreen></iframe></section>
-  <section id="ep9"><iframe class="player" src="https://drive.google.com/file/d/1Uw_5LQIAaXHMjrxbNhkZP2yYBw65jdS-/preview" allowfullscreen></iframe></section>
-  <section id="ep10"><iframe class="player" src="https://drive.google.com/file/d/1Uc27oGEKvP0Grvnc0KIvB8RNlexJZuIC/preview" allowfullscreen></iframe></section>
-  <section id="ep11"><iframe class="player" src="https://drive.google.com/file/d/1U_ysYEzi62K__30goLtPc2j-4CUDnq8x/preview" allowfullscreen></iframe></section>
-  <section id="ep12"><iframe class="player" src="https://drive.google.com/file/d/1UvXH75NwnapaDhy5q-uUbSxfRGSdTy6e/preview" allowfullscreen></iframe></section>
-  <section id="ova"><iframe class="player" src="https://drive.google.com/file/d/1Utx9tQXTUZB5H_hgPA8k21LwhltiKEhZ/preview" allowfullscreen></iframe></section>
-</section>
-
-<!-- Prison School Manga -->
-<section id="prison-manga">
-  <h2>Prison School Manga (Vol. 11–28)</h2>
+<!-- Sección Anime -->
+<section id="anime" class="active" style="background:#000;">
+  <iframe id="animePlayer" class="player" src="https://drive.google.com/file/d/1UFFbVYBlfQy-kHKhSY-qITOOiKgSh4SA/preview" allowfullscreen></iframe>
   <ol>
-    <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view" target="_blank">Volumen 11</a></li>
-    <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view" target="_blank">Volumen 12</a></li>
-    <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view" target="_blank">Volumen 13</a></li>
-    <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view" target="_blank">Volumen 14</a></li>
-    <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view" target="_blank">Volumen 15</a></li>
-    <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view" target="_blank">Volumen 16</a></li>
-    <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view" target="_blank">Volumen 17</a></li>
-    <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view" target="_blank">Volumen 18</a></li>
-    <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view" target="_blank">Volumen 19</a></li>
-    <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view" target="_blank">Volumen 20</a></li>
-    <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view" target="_blank">Volumen 21</a></li>
-    <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view" target="_blank">Volumen 22</a></li>
-    <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view" target="_blank">Volumen 23</a></li>
-    <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view" target="_blank">Volumen 24</a></li>
-    <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view" target="_blank">Volumen 25</a></li>
-    <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view" target="_blank">Volumen 26</a></li>
-    <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view" target="_blank">Volumen 27</a></li>
-    <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view" target="_blank">Volumen 28</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UFFbVYBlfQy-kHKhSY-qITOOiKgSh4SA')">Episodio 1</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UeNeN1VxX6d0q82J0X0zcTfTF60UP0B9')">Episodio 2</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UAU6DZYXM5tEJq8dkxW4IsxWXBe1a6DJ')">Episodio 3</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UOLFxKclBMrreP3or2gcbpiO2CnjB3JQ')">Episodio 4</a></li>
+    <li><a onclick="changeSrc('animePlayer','1ULf_vkCsRLYeY4c8ny5YColnq15zlVuO')">Episodio 5</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UsWBF4aYvKS9fYOLSQXJPVpgbVBgRTWU')">Episodio 6</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UidwtIscnYiHuiBrlTF6HX5PGoLuO4bO')">Episodio 7</a></li>
+    <li><a onclick="changeSrc('animePlayer','1Uznw8dMN-kppzvWZBDeQRESwU6b8JjD5')">Episodio 8</a></li>
+    <li><a onclick="changeSrc('animePlayer','1Uw_5LQIAaXHMjrxbNhkZP2yYBw65jdS-')">Episodio 9</a></li>
+    <li><a onclick="changeSrc('animePlayer','1Uc27oGEKvP0Grvnc0KIvB8RNlexJZuIC')">Episodio 10</a></li>
+    <li><a onclick="changeSrc('animePlayer','1U_ysYEzi62K__30goLtPc2j-4CUDnq8x')">Episodio 11</a></li>
+    <li><a onclick="changeSrc('animePlayer','1UvXH75NwnapaDhy5q-uUbSxfRGSdTy6e')">Episodio 12</a></li>
+    <li><a onclick="changeSrc('animePlayer','1Utx9tQXTUZB5H_hgPA8k21LwhltiKEhZ')">OVA</a></li>
   </ol>
 </section>
 
-<!-- Deadman Wonderland Anime -->
-<section id="wonderland-anime">
-  <nav>
-    <a onclick="mostrarEpisodioDW('dw1')" id="link-dw1" class="active">Episodio 1</a>
-    <a onclick="mostrarEpisodioDW('dw2')" id="link-dw2">Episodio 2</a>
-    <a onclick="mostrarEpisodioDW('dw3')" id="link-dw3">Episodio 3</a>
-    <a onclick="mostrarEpisodioDW('dw4')" id="link-dw4">Episodio 4</a>
-    <a onclick="mostrarEpisodioDW('dw5')" id="link-dw5">Episodio 5</a>
-    <a onclick="mostrarEpisodioDW('dw6')" id="link-dw6">Episodio 6</a>
-    <a onclick="mostrarEpisodioDW('dw7')" id="link-dw7">Episodio 7</a>
-    <a onclick="mostrarEpisodioDW('dw8')" id="link-dw8">Episodio 8</a>
-    <a onclick="mostrarEpisodioDW('dw9')" id="link-dw9">Episodio 9</a>
-    <a onclick="mostrarEpisodioDW('dw10')" id="link-dw10">Episodio 10</a>
-    <a onclick="mostrarEpisodioDW('dw11')" id="link-dw11">Episodio 11</a>
-    <a onclick="mostrarEpisodioDW('dw12')" id="link-dw12">Episodio 12</a>
-    <a onclick="mostrarEpisodioDW('dw-ova')" id="link-dw-ova">OVA</a>
-  </nav>
-  <section id="dw1"><iframe class="player" src="https://drive.google.com/file/d/1VQg4UyvLTye6kakbkduOoJ2eS0g6GpOH/preview" allowfullscreen></iframe></section>
-  <section id="dw2"><iframe class="player" src="https://drive.google.com/file/d/1VPtunFKrK7LEPtqTcQGba1_-9AcGOL3o/preview" allowfullscreen></iframe></section>
-  <section id="dw3"><iframe class="player" src="https://drive.google.com/file/d/1VNX6Xb7pXDSeTXuAWV09UAZYfMDYOeFj/preview" allowfullscreen></iframe></section>
-  <section id="dw4"><iframe class="player" src="https://drive.google.com/file/d/1VR6DOEeIAMWt3Af_N7dux-FgCE77_C-o/preview" allowfullscreen></iframe></section>
-  <section id="dw5"><iframe class="player" src="https://drive.google.com/file/d/1VR5FfYWXWPOf6aHtOuQRVIvpOKBmL-is/preview" allowfullscreen></iframe></section>
-  <section id="dw6"><iframe class="player" src="https://drive.google.com/file/d/1VbsZD8dbIrV6kxUMx9c-MpTxn18GslHM/preview" allowfullscreen></iframe></section>
-  <section id="dw7"><iframe class="player" src="https://drive.google.com/file/d/1VRk92soBaSZcs7KydJ6vqbEJCXwBmUID/preview" allowfullscreen></iframe></section>
-  <section id="dw8"><iframe class="player" src="https://drive.google.com/file/d/1VtJIumkQ3RHh9LXrgYyjguHAh9qPt9VH/preview" allowfullscreen></iframe></section>
-  <section id="dw9"><iframe class="player" src="https://drive.google.com/file/d/1VqW_zRwHeMpRQul-mpK1oBVSA99aRCpG/preview" allowfullscreen></iframe></section>
-  <section id="dw10"><iframe class="player" src="https://drive.google.com/file/d/1WDcerRAov9hzypbO2HoF3D8objZrcVRy/preview" allowfullscreen></iframe></section>
-  <section id="dw11"><iframe class="player" src="https://drive.google.com/file/d/1W4Bp6qMz-_61gDUjNKolzzq_YMctWYGZ/preview" allowfullscreen></iframe></section>
-  <section id="dw12"><iframe class="player" src="https://drive.google.com/file/d/1WILIMKDi99Fc2YaKAzuOYOh2QV0bc73C/preview" allowfullscreen></iframe></section>
-  <section id="dw-ova"><iframe class="player" src="https://drive.google.com/file/d/1WHEqW60pw4lKDBjA45VPREHZd7Y-UgcV/preview" allowfullscreen></iframe></section>
+<!-- Sección Prison School Manga -->
+<section id="mangas" style="background:#111;">
+  <h2>Prison School Manga Vol. 11–28</h2>
+  <ol>
+    <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view?usp=drive_link" target="_blank">Vol.11</a></li>
+    <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view?usp=drive_link" target="_blank">Vol.12</a></li>
+    <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view?usp=drive_link" target="_blank">Vol.13</a></li>
+    <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view?usp=drive_link" target="_blank">Vol.14</a></li>
+    <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view?usp=drive_link" target="_blank">Vol.15</a></li>
+    <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view?usp=drive_link" target="_blank">Vol.16</a></li>
+    <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view?usp=drive_link" target="_blank">Vol.17</a></li>
+    <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view?usp=drive_link" target="_blank">Vol.18</a></li>
+    <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view?usp=drive_link" target="_blank">Vol.19</a></li>
+    <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view?usp=drive_link" target="_blank">Vol.20</a></li>
+    <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view?usp=drive_link" target="_blank">Vol.21</a></li>
+    <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view?usp=drive_link" target="_blank">Vol.22</a></li>
+    <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view?usp=drive_link" target="_blank">Vol.23</a></li>
+    <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view?usp=drive_link" target="_blank">Vol.24</a></li>
+    <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view?usp=drive_link" target="_blank">Vol.25</a></li>
+    <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view?usp=drive_link" target="_blank">Vol.26</a></li>
+    <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view?usp=drive_link" target="_blank">Vol.27</a></li>
+    <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view?usp=drive_link" target="_blank">Vol.28</a></li>
+  </ol>
 </section>
 
-<!-- Deadman Wonderland Manga -->
-<section id="wonderland-manga">
-  <h2>Deadman Wonderland Manga (Vol. 1–6)</h2>
+<!-- Wonderlans Anime -->
+<section id="wonderlans" style="background:url('https://github.com/minibaluu/prison-school-page/blob/main/deadman%20anime.jpg?raw=true') no-repeat center center; background-size:cover;">
+  <iframe id="wonderlansPlayer" class="player" src="https://drive.google.com/file/d/1VNX6Xb7pXDSeTXuAWV09UAZYfMDYOeFj/preview" allowfullscreen></iframe>
   <ol>
-    <li><a href="https://drive.google.com/file/d/1WJHxCZ7Fh9Ji6lUltioyA13YvPHupL-R/view" target="_blank">Volumen 1</a></li>
-    <li><a href="https://drive.google.com/file/d/1WNliiWnyNrwTKjci0diZTqig5JgarDA7/view" target="_blank">Volumen 2</a></li>
-    <li><a href="https://drive.google.com/file/d/1WJJJvYZ4do5wR8Y19Aq6fSuuvHjgv8i6/view" target="_blank">Volumen 3</a></li>
-    <li><a href="https://drive.google.com/file/d/1WjHWBRVys5M6mi8-7fwu49eE3UcWDukk/view" target="_blank">Volumen 4</a></li>
-    <li><a href="https://drive.google.com/file/d/1WbSnnBBMElyqeNIqGMALXCWJ7-IwuLxd/view" target="_blank">Volumen 5</a></li>
-    <li><a href="https://drive.google.com/file/d/1WsXgctJmGPmziIxaO6XmPE55sn6qUpem/view" target="_blank">Volumen 6</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VNX6Xb7pXDSeTXuAWV09UAZYfMDYOeFj')">Episodio 1</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VQg4UyvLTye6kakbkduOoJ2eS0g6GpOH')">Episodio 2</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VPtunFKrK7LEPtqTcQGba1_-9AcGOL3o')">Episodio 3</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VR6DOEeIAMWt3Af_N7dux-FgCE77_C-o')">Episodio 4</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VR5FfYWXWPOf6aHtOuQRVIvpOKBmL-is')">Episodio 5</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VbsZD8dbIrV6kxUMx9c-MpTxn18GslHM')">Episodio 6</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VRk92soBaSZcs7KydJ6vqbEJCXwBmUID')">Episodio 7</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VtJIumkQ3RHh9LXrgYyjguHAh9qPt9VH')">Episodio 8</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1VqW_zRwHeMpRQul-mpK1oBVSA99aRCpG')">Episodio 9</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1WDcerRAov9hzypbO2HoF3D8objZrcVRy')">Episodio 10</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1W4Bp6qMz-_61gDUjNKolzzq_YMctWYGZ')">Episodio 11</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1WILIMKDi99Fc2YaKAzuOYOh2QV0bc73C')">Episodio 12</a></li>
+    <li><a onclick="changeSrc('wonderlansPlayer','1WHEqW60pw4lKDBjA45VPREHZd7Y-UgcV')">OVA</a></li>
+  </ol>
+</section>
+
+<!-- Wonderlans Manga -->
+<section id="wonderlans-manga" style="background:url('https://github.com/minibaluu/prison-school-page/blob/main/deadman%20anime.jpg?raw=true') no-repeat center center; background-size:cover;">
+  <h2>Deadman Wonderland Manga</h2>
+  <ol>
+    <li><a href="https://drive.google.com/file/d/1WJHxCZ7Fh9Ji6lUltioyA13YvPHupL-R/view?usp=drive_link" target="_blank">Vol.1</a></li>
+    <li><a href="https://drive.google.com/file/d/1WNliiWnyNrwTKjci0diZTqig5JgarDA7/view?usp=drive_link" target="_blank">Vol.2</a></li>
+    <li><a href="https://drive.google.com/file/d/1WJJJvYZ4do5wR8Y19Aq6fSuuvHjgv8i6/view?usp=drive_link" target="_blank">Vol.3</a></li>
+    <li><a href="https://drive.google.com/file/d/1WjHWBRVys5M6mi8-7fwu49eE3UcWDukk/view?usp=drive_link" target="_blank">Vol.4</a></li>
+    <li><a href="https://drive.google.com/file/d/1WbSnnBBMElyqeNIqGMALXCWJ7-IwuLxd/view?usp=drive_link" target="_blank">Vol.5</a></li>
+    <li><a href="https://drive.google.com/file/d/1WsXgctJmGPmziIxaO6XmPE55sn6qUpem/view?usp=drive_link" target="_blank">Vol.6</a></li>
   </ol>
 </section>
 
 <!-- DBS Manga -->
-<section id="dbs-manga">
-  <h2>Dragon Ball Super Manga (Tomo 10–20)</h2>
+<section id="dbs-manga" style="background:url('https://github.com/minibaluu/prison-school-page/blob/main/dbs%20manga.jpg?raw=true') no-repeat center center; background-size:cover;">
+  <h2>Dragon Ball Super Manga Vol.10–20</h2>
   <ol>
-    <li><a href="https://drive.google.com/file/d/1X2ZBlVkk418Q9-eVo9CFehrYEskK988C/view" target="_blank">Tomo 10</a></li>
-    <li><a href="https://drive.google.com/file/d/1X9feQduzppetRrh2Mk4xO44rM5z4uR5n/view" target="_blank">Tomo 11</a></li>
-    <li><a href="https://drive.google.com/file/d/1X3jy4I_5aqouMIf4hAI4IVC9ridY7AlE/view" target="_blank">Tomo 12</a></li>
-    <li><a href="https://drive.google.com/file/d/1XGB0VSpj5sVz0jA9ANeo9Ny1Zs6H1-WC/view" target="_blank">Tomo 13</a></li>
-    <li><a href="https://drive.google.com/file/d/1XByaAljSf1ijoC3sP-osCT4SNMCAicnf/view" target="_blank">Tomo 14</a></li>
-    <li><a href="https://drive.google.com/file/d/1XGkKcUiv13VwiiXBNv6eivXqOh3rkFde/view" target="_blank">Tomo 15</a></li>
-    <li><a href="https://drive.google.com/file/d/1XR78gxD_Lxcqz94a6vEUXX7ocHuRf8NV/view" target="_blank">Tomo 16</a></li>
-    <li><a href="https://drive.google.com/file/d/1XJvftUxgiyDbNigWz5BDKRTwj6O5QjGC/view" target="_blank">Tomo 17</a></li>
-    <li><a href="https://drive.google.com/file/d/1XXUrnzKqKI15ocHQt0u21uVoclyw9BCv/view" target="_blank">Tomo 18</a></li>
-    <li><a href="https://drive.google.com/file/d/1XVAUmlHTEK9T1LOBp4HY_9qMjEHkaeFg/view" target="_blank">Tomo 19</a></li>
-    <li><a href="https://drive.google.com/file/d/1XaFqt3PNDhUo1T3bp_zO-qwqNs4mJfSG/view" target="_blank">Tomo 20</a></li>
+    <li><a href="https://drive.google.com/file/d/1X2ZBlVkk418Q9-eVo9CFehrYEskK988C/view?usp=drive_link" target="_blank">Vol.10</a></li>
+    <li><a href="https://drive.google.com/file/d/1X9feQduzppetRrh2Mk4xO44rM5z4uR5n/view?usp=drive_link" target="_blank">Vol.11</a></li>
+    <li><a href="https://drive.google.com/file/d/1X3jy4I_5aqouMIf4hAI4IVC9ridY7AlE/view?usp=drive_link" target="_blank">Vol.12</a></li>
+    <li><a href="https://drive.google.com/file/d/1XGB0VSpj5sVz0jA9ANeo9Ny1Zs6H1-WC/view?usp=drive_link" target="_blank">Vol.13</a></li>
+    <li><a href="https://drive.google.com/file/d/1XByaAljSf1ijoC3sP-osCT4SNMCAicnf/view?usp=drive_link" target="_blank">Vol.14</a></li>
+    <li><a href="https://drive.google.com/file/d/1XGkKcUiv13VwiiXBNv6eivXqOh3rkFde/view?usp=drive_link" target="_blank">Vol.15</a></li>
+    <li><a href="https://drive.google.com/file/d/1XR78gxD_Lxcqz94a6vEUXX7ocHuRf8NV/view?usp=drive_link" target="_blank">Vol.16</a></li>
+    <li><a href="https://drive.google.com/file/d/1XJvftUxgiyDbNigWz5BDKRTwj6O5QjGC/view?usp=drive_link" target="_blank">Vol.17</a></li>
+    <li><a href="https://drive.google.com/file/d/1XXUrnzKqKI15ocHQt0u21uVoclyw9BCv/view?usp=drive_link" target="_blank">Vol.18</a></li>
+    <li><a href="https://drive.google.com/file/d/1XVAUmlHTEK9T1LOBp4HY_9qMjEHkaeFg/view?usp=drive_link" target="_blank">Vol.19</a></li>
+    <li><a href="https://drive.google.com/file/d/1XaFqt3PNDhUo1T3bp_zO-qwqNs4mJfSG/view?usp=drive_link" target="_blank">Vol.20</a></li>
   </ol>
 </section>
 
 <script>
-function mostrarSeccion(seccion) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-  document.getElementById(seccion).classList.add('active');
-  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-  document.getElementById('nav-' + seccion).classList.add('active');
+function showSection(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+  event.target.classList.add('active');
 }
 
-function mostrarEpisodio(ep) {
-  document.querySelectorAll('#anime section').forEach(s => s.style.display = 'none');
-  document.getElementById(ep).style.display = 'block';
-  document.querySelectorAll('#anime nav a').forEach(a => a.classList.remove('active'));
-  document.getElementById('link-' + ep).classList.add('active');
-}
-
-function mostrarEpisodioDW(ep) {
-  document.querySelectorAll('#wonderland-anime section').forEach(s => s.style.display = 'none');
-  document.getElementById(ep).style.display = 'block';
-  document.querySelectorAll('#wonderland-anime nav a').forEach(a => a.classList.remove('active'));
-  document.getElementById('link-' + ep).classList.add('active');
+function changeSrc(iframeId, fileId){
+  document.getElementById(iframeId).src=`https://drive.google.com/file/d/${fileId}/preview`;
 }
 </script>
 
