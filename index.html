@@ -28,7 +28,7 @@
       background-color: rgba(255, 255, 255, 0.1);
       padding: 10px;
       border-radius: 5px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     nav ul {
@@ -67,22 +67,21 @@
       color: mediumaquamarine;
     }
 
-    /* Caja separada para la sección de mangas */
     .manga-section {
       background-color: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.2);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      margin-top: 80px;
-      margin-bottom: 80px;
+      margin: 40px 0;
     }
 
-    /* Separador decorativo opcional */
-    .separador {
-      height: 2px;
-      background-color: rgba(255, 255, 255, 0.3);
-      margin: 60px 0;
+    .section {
+      display: none; /* Oculta todas las secciones por defecto */
+    }
+
+    .active {
+      display: block; /* Muestra solo la activa */
     }
   </style>
 </head>
@@ -92,47 +91,39 @@
 
   <nav>
     <ul>
-      <li><a href="#Mangas">Mangas</a></li>
-      <li><a href="#info">OVA</a></li>
+      <li><a href="#" onclick="mostrarSeccion('mangas')">Mangas</a></li>
+      <li><a href="#" onclick="mostrarSeccion('ova')">OVA</a></li>
     </ul>
   </nav>
 
-  <!-- Separador visual -->
-  <div class="separador"></div>
-
-  <!-- Sección de Mangas claramente separada -->
-  <section id="Mangas">
-    <div class="manga-section">
-      <h2>Mangas</h2>
-      <p>Esta es la sección de los mangas del volumen 11 al 28:</p>
-      <ol>
-        <!-- Lista completa de mangas -->
-        <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view?usp=drive_link" target="_blank">Ver Manga 11</a></li>
-        <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view?usp=drive_link" target="_blank">Ver Manga 12</a></li>
-        <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view?usp=drive_link" target="_blank">Ver Manga 13</a></li>
-        <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view?usp=drive_link" target="_blank">Ver Manga 14</a></li>
-        <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view?usp=drive_link" target="_blank">Ver Manga 15</a></li>
-        <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view?usp=drive_link" target="_blank">Ver Manga 16</a></li>
-        <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view?usp=drive_link" target="_blank">Ver Manga 17</a></li>
-        <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view?usp=drive_link" target="_blank">Ver Manga 18</a></li>
-        <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view?usp=drive_link" target="_blank">Ver Manga 19</a></li>
-        <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view?usp=drive_link" target="_blank">Ver Manga 20</a></li>
-        <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view?usp=drive_link" target="_blank">Ver Manga 21</a></li>
-        <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view?usp=drive_link" target="_blank">Ver Manga 22</a></li>
-        <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view?usp=drive_link" target="_blank">Ver Manga 23</a></li>
-        <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view?usp=drive_link" target="_blank">Ver Manga 24</a></li>
-        <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view?usp=drive_link" target="_blank">Ver Manga 25</a></li>
-        <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view?usp=drive_link" target="_blank">Ver Manga 26</a></li>
-        <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view?usp=drive_link" target="_blank">Ver Manga 27</a></li>
-        <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view?usp=drive_link" target="_blank">Ver Manga 28</a></li>
-      </ol>
-    </div>
+  <!-- Sección Mangas -->
+  <section id="mangas" class="section manga-section active">
+    <h2>Mangas</h2>
+    <p>Esta es la sección de los mangas del volumen 11 al 28:</p>
+    <ol>
+      <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view?usp=drive_link" target="_blank">Ver Manga 11</a></li>
+      <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view?usp=drive_link" target="_blank">Ver Manga 12</a></li>
+      <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view?usp=drive_link" target="_blank">Ver Manga 13</a></li>
+      <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view?usp=drive_link" target="_blank">Ver Manga 14</a></li>
+      <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view?usp=drive_link" target="_blank">Ver Manga 15</a></li>
+      <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view?usp=drive_link" target="_blank">Ver Manga 16</a></li>
+      <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view?usp=drive_link" target="_blank">Ver Manga 17</a></li>
+      <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view?usp=drive_link" target="_blank">Ver Manga 18</a></li>
+      <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view?usp=drive_link" target="_blank">Ver Manga 19</a></li>
+      <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view?usp=drive_link" target="_blank">Ver Manga 20</a></li>
+      <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view?usp=drive_link" target="_blank">Ver Manga 21</a></li>
+      <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view?usp=drive_link" target="_blank">Ver Manga 22</a></li>
+      <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view?usp=drive_link" target="_blank">Ver Manga 23</a></li>
+      <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view?usp=drive_link" target="_blank">Ver Manga 24</a></li>
+      <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view?usp=drive_link" target="_blank">Ver Manga 25</a></li>
+      <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view?usp=drive_link" target="_blank">Ver Manga 26</a></li>
+      <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view?usp=drive_link" target="_blank">Ver Manga 27</a></li>
+      <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view?usp=drive_link" target="_blank">Ver Manga 28</a></li>
+    </ol>
   </section>
 
-  <!-- Otro separador opcional -->
-  <div class="separador"></div>
-
-  <section id="info">
+  <!-- Sección OVA -->
+  <section id="ova" class="section">
     <h2>OVA</h2>
     <p>Mira el OVA directamente aquí:</p>
     <iframe width="560" height="315" 
@@ -145,8 +136,16 @@
     </iframe>
   </section>
 
+  <script>
+    function mostrarSeccion(id) {
+      // Oculta todas las secciones
+      document.querySelectorAll('.section').forEach(seccion => {
+        seccion.classList.remove('active');
+      });
+
+      // Muestra la sección correspondiente
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
-
-
-
