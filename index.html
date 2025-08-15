@@ -85,7 +85,7 @@
   <a class="active" onclick="showSection('anime')">Anime</a>
   <a onclick="showSection('mangas')">Prison School Manga</a>
   <a onclick="showSection('wonderlans')">Wonderlans Anime</a>
-  <a onclick="showSection('wonderlans-manga')">Wonderlans Manga</a>
+  <a onclick="showSection('wonderland-manga')">Wonderlans Manga</a>
   <a onclick="showSection('dbs-manga')">DBS Manga</a>
   <a onclick="showSection('akame-ga-kill')">Akame ga Kill</a>
   <a onclick="showSection('hotd-anime')">Highschool of the dead</a>
@@ -114,25 +114,26 @@
 <!-- Sección Prison School Manga -->
 <section id="mangas" style="background:#111;">
   <h2>Prison School Manga Vol. 11–28</h2>
-  <ol>
-    <li><a href="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/view?usp=drive_link" target="_blank">Vol.11</a></li>
-    <li><a href="https://drive.google.com/file/d/16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw/view?usp=drive_link" target="_blank">Vol.12</a></li>
-    <li><a href="https://drive.google.com/file/d/1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr/view?usp=drive_link" target="_blank">Vol.13</a></li>
-    <li><a href="https://drive.google.com/file/d/1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o/view?usp=drive_link" target="_blank">Vol.14</a></li>
-    <li><a href="https://drive.google.com/file/d/1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz/view?usp=drive_link" target="_blank">Vol.15</a></li>
-    <li><a href="https://drive.google.com/file/d/1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK/view?usp=drive_link" target="_blank">Vol.16</a></li>
-    <li><a href="https://drive.google.com/file/d/1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa/view?usp=drive_link" target="_blank">Vol.17</a></li>
-    <li><a href="https://drive.google.com/file/d/18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ/view?usp=drive_link" target="_blank">Vol.18</a></li>
-    <li><a href="https://drive.google.com/file/d/1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU/view?usp=drive_link" target="_blank">Vol.19</a></li>
-    <li><a href="https://drive.google.com/file/d/1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH/view?usp=drive_link" target="_blank">Vol.20</a></li>
-    <li><a href="https://drive.google.com/file/d/17F5S3ODWfVmrofIKwVrGiyugefRijMOe/view?usp=drive_link" target="_blank">Vol.21</a></li>
-    <li><a href="https://drive.google.com/file/d/1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z/view?usp=drive_link" target="_blank">Vol.22</a></li>
-    <li><a href="https://drive.google.com/file/d/18zGIs5vKr2warDEiVlUt0WV9D1reXA-N/view?usp=drive_link" target="_blank">Vol.23</a></li>
-    <li><a href="https://drive.google.com/file/d/1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc/view?usp=drive_link" target="_blank">Vol.24</a></li>
-    <li><a href="https://drive.google.com/file/d/1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET/view?usp=drive_link" target="_blank">Vol.25</a></li>
-    <li><a href="https://drive.google.com/file/d/19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL/view?usp=drive_link" target="_blank">Vol.26</a></li>
-    <li><a href="https://drive.google.com/file/d/165C_ekqwMchVJTFofrl9g3xeBa6-mrWT/view?usp=drive_link" target="_blank">Vol.27</a></li>
-    <li><a href="https://drive.google.com/file/d/1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M/view?usp=drive_link" target="_blank">Vol.28</a></li>
+  <iframe id="mangasPlayer" class="player" src="https://drive.google.com/file/d/1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8/preview" allowfullscreen></iframe>
+    <ol>
+  <li><a onclick="changeSrc('mangasPlayer','1p-BaoAUD5SZfvaTQsKJLm943EeXlSZ-8')">Vol.11</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','16VfSEtoDEcTTIfNuEYOTBEDejWpfH-vw')">Vol.12</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1i_5OVcpyM2lcv9Wf_yEQ3IAhuWuMDRZr')">Vol.13</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1E0r-bs9tCDN-9rlWWoL6gk_eKwSIcg1o')">Vol.14</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1zc9z0-qpYiqE9ydFbzugl3JNkM2ZK2Hz')">Vol.15</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1ropmv5o6RdTXJ7M5d8joh9lE8JZumoMK')">Vol.16</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1xhg50kIQdIDk0LZ-OqG0XrmHyQKyTKSa')">Vol.17</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','18IXN6rFB-U6PZm6g2Jm_zI66JoYTAKXJ')">Vol.18</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1YMocIm5zKqFCBYFwan9RKaDW3_WjHeiU')">Vol.19</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1MZqxFTdDRHBf3vBrTtR7F45EiELe8PMH')">Vol.20</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','17F5S3ODWfVmrofIKwVrGiyugefRijMOe')">Vol.21</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1Ai2ZmT79XxwIiBZs3gA_mpunGDg3P29z')">Vol.22</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','18zGIs5vKr2warDEiVlUt0WV9D1reXA-N')">Vol.23</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1FQTxeicFU3sB1rNvnLSWhx5GYGrq3pvc')">Vol.24</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1C4nWybxcdmS5AP6lg6IcW-8dIiKk-rET')">Vol.25</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','19GOzNhZCKZvPxiC2MqdstJD3elUIh8sL')">Vol.26</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','165C_ekqwMchVJTFofrl9g3xeBa6-mrWT')">Vol.27</a></li>
+  <li><a onclick="changeSrc('mangasPlayer','1rJ5pTq5ilfJAR1ZoOkOn1NW9dbJWWI3M')">Vol.28</a></li>
   </ol>
 </section>
 
@@ -157,16 +158,21 @@
 </section>
 
 <!-- Wonderlans Manga -->
-<section id="wonderlans-manga" style="background:url('https://github.com/minibaluu/prison-school-page/blob/main/deadman%20anime.jpg?raw=true') no-repeat center center; background-size:cover;">
+<section id="wonderland-manga" style="background:url('https://github.com/minibaluu/prison-school-page/blob/main/deadman%20anime.jpg?raw=true') no-repeat center center; background-size:cover;">
   <h2>Deadman Wonderland Manga</h2>
-  <ol>
-    <li><a href="https://drive.google.com/file/d/1WJHxCZ7Fh9Ji6lUltioyA13YvPHupL-R/view?usp=drive_link" target="_blank">Vol.1</a></li>
-    <li><a href="https://drive.google.com/file/d/1WNliiWnyNrwTKjci0diZTqig5JgarDA7/view?usp=drive_link" target="_blank">Vol.2</a></li>
-    <li><a href="https://drive.google.com/file/d/1WJJJvYZ4do5wR8Y19Aq6fSuuvHjgv8i6/view?usp=drive_link" target="_blank">Vol.3</a></li>
-    <li><a href="https://drive.google.com/file/d/1WjHWBRVys5M6mi8-7fwu49eE3UcWDukk/view?usp=drive_link" target="_blank">Vol.4</a></li>
-    <li><a href="https://drive.google.com/file/d/1WbSnnBBMElyqeNIqGMALXCWJ7-IwuLxd/view?usp=drive_link" target="_blank">Vol.5</a></li>
-    <li><a href="https://drive.google.com/file/d/1WsXgctJmGPmziIxaO6XmPE55sn6qUpem/view?usp=drive_link" target="_blank">Vol.6</a></li>
-  </ol>
+  
+  <iframe id="wonderlandMangaPlayer" class="player" src="https://drive.google.com/file/d/1WJHxCZ7Fh9Ji6lUltioyA13YvPHupL-R/preview" allowfullscreen></iframe>
+  
+    <ol>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WJHxCZ7Fh9Ji6lUltioyA13YvPHupL-R')">Vol.1</a></li>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WNliiWnyNrwTKjci0diZTqig5JgarDA7')">Vol.2</a></li>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WJJJvYZ4do5wR8Y19Aq6fSuuvHjgv8i6')">Vol.3</a></li>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WjHWBRVys5M6mi8-7fwu49eE3UcWDukk')">Vol.4</a></li>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WbSnnBBMElyqeNIqGMALXCWJ7-IwuLxd')">Vol.5</a></li>
+  <li><a onclick="changeSrc('wonderlandmangaPlayer','1WsXgctJmGPmziIxaO6XmPE55sn6qUpem')">Vol.6</a></li>
+
+    </ol>
+
 </section>
 
 <!-- DBS Manga -->
@@ -295,6 +301,7 @@ function changeSrc(iframeId, fileId){
 
 </body>
 </html>
+
 
 
 
