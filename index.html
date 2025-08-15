@@ -222,35 +222,27 @@
 
   </section>
 
-<section>
-  <h2>Highschool of the Dead</h2>
+  <section <section id="hotd-anime" style="background:#000;">
+  <iframe id="hotdPlayer" class="player" src="https://drive.google.com/file/d/1XjmiK79oYwthpyz8lyYsWliuG1HDxGi_/preview" allowfullscreen></iframe>
+  
+    <ol>
+    <li><a onclick="changeSrc('hotdPlayer','1XjmiK79oYwthpyz8lyYsWliuG1HDxGi_')">Episodio 1</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1XlAaBrwAzJNu64P_v8MIZ4YQjBu8Tk8G')">Episodio 2</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1XrgKzAxZGmyO4hThvH5-c-WbD1gIe7QW')">Episodio 3</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1XtR3EH8yP2gK2dXjN63Dy2YbUZGQKDr8')">Episodio 4</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Xt_6I6dR1M13-BRbjuuelnjAQjfZ3ej8')">Episodio 5</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Xy_RSbM1a3Gj_swgoi6Lm-Cnq_znCFgu')">Episodio 6</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Xz6lBp8o7nQ-enaKBypUDakSA09cgH9C')">Episodio 7</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Y0g8AVWzg6W4edST8DRmdGC1Ndms4HXo')">Episodio 8</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Y2CVmWgZVibmJVFiqwm-BzO6AiZ17Qy7')">Episodio 9</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Y44ofRFpNayrQXdL4aNftzzvbQF8Cphn')">Episodio 10</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1Y7clqLEM__LPl0-Ej2VjVI4hA7oU-12T')">Episodio 11</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1YBtIo25LsquuAJalpIIiYfGOE8UUrmSF')">Episodio 12</a></li>
+    <li><a onclick="changeSrc('hotdPlayer','1YOwUZiI15C12Ym1S1lA0sFm2xmVPT8Kp')">OVA</a></li>
 
-  <ul>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1XjmiK79oYwthpyz8lyYsWliuG1HDxGi_'); return false;">Episodio 1</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1XlAaBrwAzJNu64P_v8MIZ4YQjBu8Tk8G'); return false;">Episodio 2</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1XrgKzAxZGmyO4hThvH5-c-WbD1gIe7QW'); return false;">Episodio 3</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1XtR3EH8yP2gK2dXjN63Dy2YbUZGQKDr8'); return false;">Episodio 4</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Xt_6I6dR1M13-BRbjuuelnjAQjfZ3ej8'); return false;">Episodio 5</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Xy_RSbM1a3Gj_swgoi6Lm-Cnq_znCFgu'); return false;">Episodio 6</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Xz6lBp8o7nQ-enaKBypUDakSA09cgH9C'); return false;">Episodio 7</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Y0g8AVWzg6W4edST8DRmdGC1Ndms4HXo'); return false;">Episodio 8</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Y2CVmWgZVibmJVFiqwm-BzO6AiZ17Qy7'); return false;">Episodio 9</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Y44ofRFpNayrQXdL4aNftzzvbQF8Cphn'); return false;">Episodio 10</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1Y7clqLEM__LPl0-Ej2VjVI4hA7oU-12T'); return false;">Episodio 11</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1YBtIo25LsquuAJalpIIiYfGOE8UUrmSF'); return false;">Episodio 12</a></li>
-    <li><a href="#" onclick="changeSrc('hotdPlayer', '1YOwUZiI15C12Ym1S1lA0sFm2xmVPT8Kp'); return false;">OVA</a></li>
-  </ul>
-
-  <iframe
-    id="hotdPlayer"
-    width="560"
-    height="315"
-    src="https://drive.google.com/file/d/1XjmiK79oYwthpyz8lyYsWliuG1HDxGi_/preview"
-    frameborder="0"
-    allow="autoplay; encrypted-media"
-    allowfullscreen>
-  </iframe>
-</section>
+  </ol>
+   
+  </section>
 
 <script>
   function changeSrc(iframeId, fileId) {
@@ -275,10 +267,35 @@ function showSection(id){
 function changeSrc(iframeId, fileId){
   document.getElementById(iframeId).src=`https://drive.google.com/file/d/${fileId}/preview`;
 }
+
+  function showSection(id, elem) {
+  document.querySelectorAll('section').forEach(section => {
+  section.classList.remove('active');
+    
+    });
+    const section = document.getElementById(id);
+    if (section) {
+      section.classList.add('active');
+    }
+    
+    document.querySelectorAll('nav a').forEach(link => {
+     link.classList.remove('active');
+    });
+    elem.classList.add('active');
+  }
+
+  function changeSrc(iframeId, fileId) {
+    const iframe = document.getElementById(iframeId);
+    if (!iframe) return;
+    iframe.src = `https://drive.google.com/file/d/${fileId}/preview`;
+  }
+
+
 </script>
 
 </body>
 </html>
+
 
 
 
